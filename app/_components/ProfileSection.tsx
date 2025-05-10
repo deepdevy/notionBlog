@@ -6,7 +6,7 @@ import { Youtube, Github, BookOpen, Instagram } from 'lucide-react';
 const socialLinks = [
   {
     icon: Youtube,
-    href: 'https://www.youtube.com/gymcoding',
+    href: 'https://www.youtube.com/',
   },
   {
     icon: Github,
@@ -14,11 +14,11 @@ const socialLinks = [
   },
   {
     icon: BookOpen,
-    href: 'https://www.inflearn.com/users/432199/@gymcoding',
+    href: 'https://www.inflearn.com/',
   },
   {
     icon: Instagram,
-    href: 'https://www.instagram.com/gymcoding',
+    href: 'https://www.instagram.com/',
   },
 ];
 
@@ -56,7 +56,7 @@ export default function ProfileSection() {
             ))}
           </div>
 
-          <p className="bg-primary/10 rounded p-2 text-center text-sm">코딩 교육 크리에이터 ✨</p>
+          <p className="bg-primary/10 rounded p-2 text-center text-sm">Frontend Developer</p>
         </div>
       </CardContent>
     </Card>
