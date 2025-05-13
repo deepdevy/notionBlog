@@ -56,7 +56,7 @@ export default function ProfileSection() {
             ))}
           </div>
 
-          <p className="bg-primary/10 rounded p-2 text-center text-sm">Frontend Developer</p>
+          {/* <p className="bg-primary/10 rounded p-2 text-center text-sm">Frontend Developer</p> */}
         </div>
       </CardContent>
     </Card>
