@@ -1,7 +1,7 @@
 import { PostCard } from '@/components/features/blog/PostCard';
 import TagSection from '@/app/_components/TagSection';
 import ProfileSection from '@/app/_components/ProfileSection';
-import ContactSection from '@/app/_components/ContactSection';
+// import ContactSection from '@/app/_components/ContactSection';
 import Link from 'next/link';
 import { getPublishedPosts, getTags } from '@/lib/notion';
 import SortSelect from '@/app/_components/SortSelect';
@@ -36,9 +36,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
           {/* 블로그 카드 그리드 */}
           <div className="grid gap-4">
-            {posts.map((post) => (
+            {posts.map((post, index) => (
               <Link href={`/blog/${post.slug}`} key={post.id}>
-                <PostCard post={post} />
+                <PostCard post={post} isFirst={index === 0} />
               </Link>
             ))}
           </div>
@@ -46,7 +46,7 @@ export default async function Home({ searchParams }: HomeProps) {
         {/* 우측 사이드바 */}
         <aside className="flex flex-col gap-6">
           <ProfileSection />
-          <ContactSection />
+          {/* <ContactSection /> */}
         </aside>
       </div>
     </div>
