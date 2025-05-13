@@ -66,8 +66,9 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   return (
     <div className="container py-12">
-      <div className="grid grid-cols-[240px_1fr_240px] gap-8">
-        <aside>{/* 추후 콘텐츠 추가 */}</aside>
+      <div className="grid grid-cols-[1fr_240px] gap-8">
+        {/* <div className="grid grid-cols-[240px_1fr_240px] gap-8"> */}
+        {/* <aside>추후 콘텐츠 추가</aside> */}
         <section>
           {/* 블로그 헤더 */}
           <div className="space-y-4">
