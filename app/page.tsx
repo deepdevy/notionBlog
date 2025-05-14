@@ -1,6 +1,6 @@
 import ProfileSection from '@/app/_components/ProfileSection';
 // import ContactSection from '@/app/_components/ContactSection';
-import { getTags } from '@/lib/notion';
+import { getTags, getPublishedPosts } from '@/lib/notion';
 // import { getPublishedPosts, getTags } from '@/lib/notion';
 import HeaderSection from '@/app/_components/HeaderSection';
 // import PostListClient from '@/components/features/blog/PostList.client';
@@ -21,6 +21,10 @@ export default async function Home({ searchParams }: HomeProps) {
   // const [tags] = await Promise.all([getTags()]);
 
   const tags = getTags();
+  const postsPromise = getPublishedPosts({
+    tag: selectedTag,
+    sort: selectedSort,
+  });
 
   return (
     <div className="container py-8">
@@ -36,7 +40,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <HeaderSection selectedTag={selectedTag} />
           {/* 블로그 카드 그리드 */}
           <Suspense fallback={<PostListSkeleton />}>
-            <PostListSuspense selectedTag={selectedTag} selectedSort={selectedSort} />
+            <PostListSuspense postsPromise={postsPromise} />
           </Suspense>
           {/* <PostListClient /> */}
         </div>
